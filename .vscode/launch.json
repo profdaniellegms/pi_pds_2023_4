@@ -1,4 +1,4 @@
-/ Copie e cole este arquivo na subpasta .vscode, dentro da pasta raíz do projeto
+// Copie e cole este arquivo na subpasta .vscode, dentro da pasta raíz do projeto
 // root -> .vscode -> launch.json
 {
     "version": "0.2.0",
