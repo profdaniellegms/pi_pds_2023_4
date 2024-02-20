@@ -1,0 +1,31 @@
+---1)
+CREATE VIEW sala_projetor_ar AS
+SELECT nome_sala,projetor,ar_condicionado FROM salas
+WHERE projetor = true AND ar_condicionado = true and lousa_digital = false
+
+SELECT * FROM sala_projetor_ar
+
+---2)
+CREATE VIEW laboratorio_sala AS
+SELECT nome_sala FROM salas
+WHERE tipo_sala = 'L'
+ORDER BY nome_sala
+
+SELECT * FROM laboratorio_sala
+
+---3)
+CREATE VIEW quant_tipo_sala AS
+SELECT tipo_sala,COUNT(tipo_sala) FROM salas
+GROUP BY tipo_sala
+ORDER BY COUNT(tipo_sala) DESC
+
+SELECT * FROM quant_tipo_sala
+
+---4)
+CREATE VIEW qtd_aula_por_sala AS
+SELECT salas.nome_sala,COUNT(id_aula) AS quantidade FROM aulas
+INNER JOIN salas ON aulas.fk_sala = salas.id_sala
+GROUP BY salas.nome_sala
+ORDER BY quantidade DESC
+
+SELECT * FROM qtd_aula_por_sala
