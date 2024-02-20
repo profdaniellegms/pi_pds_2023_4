@@ -1,0 +1,91 @@
+---TABELAS SECUNDÁRIAS:
+
+CREATE TABLE instrutores (
+	id_instrutor VARCHAR PRIMARY KEY NOT NULL,
+	matricula VARCHAR(50) NOT NULL UNIQUE,
+	nome_completo VARCHAR NOT NULL
+);
+
+CREATE TABLE competencias (
+    id_competencia VARCHAR PRIMARY KEY NOT NULL,
+    descricao VARCHAR NOT NULL
+);
+
+CREATE TABLE salas(
+ 	id_sala varchar PRIMARY KEY,
+ 	nome_sala varchar NOT NULL,
+	tipo_sala char(1) CHECK(tipo_sala IN ('L', 'A', 'S')),
+ 	lousa_digital boolean,
+ 	projetor boolean,
+ 	ar_condicionado boolean
+);
+
+CREATE TABLE cursos (
+  id_curso varchar PRIMARY KEY,
+  descricao_curso varchar NOT NULL,
+  carga_horaria_curso integer NOT NULL,
+  modalidade varchar NOT NULL, CHECK(modalidade IN('Iniciação', 'Capacitação', 'Qualificação',
+'Aperfeiçoamento', 'Técnico', 'Superior - Licenciatura', 'Superior - Bacharel', 'Superior -
+Tecnologia', 'Pós Graduação Lato Sensu - Especialização', 'Pós-Graduação Stricto Sensu -
+Mestrado', 'Pós-Graduação Stricto Sensu - Doutorado')),
+  eixo varchar NOT NULL
+);
+
+---TABELAS PRIMÁRIAS:
+
+CREATE TABLE turmas (
+	id_turma varchar PRIMARY KEY,
+	polo_educacional varchar NOT NULL,
+	turno varchar NOT NULL CHECK(turno IN ('Matutino', 'Vespertino', 'Noturno')),
+	presencial boolean DEFAULT true,
+	data_inicio date NOT NULL DEFAULT CURRENT_DATE,
+	data_fim date CHECK(data_fim > data_inicio),
+	horas_aula_dia integer NOT NULL,
+	fk_curso varchar REFERENCES cursos(id_curso)
+);
+
+CREATE TABLE unidades_curriculares (
+	id_unidade varchar PRIMARY KEY,
+	descricao_unidade varchar NOT NULL,
+	carga_horaria_unidade integer NOT NULL,
+	ordem int NOT NULL,
+	fk_curso varchar NOT NULL,
+	fk_instrutor varchar NOT NULL
+);
+
+---TABELA FATO:
+CREATE TABLE aulas (
+	id_aula VARCHAR PRIMARY KEY,
+	data_aula DATE DEFAULT CURRENT_DATE,
+	status_aula VARCHAR DEFAULT 'Prevista' CHECK(status_aula IN ('Prevista', 'Ministrada', 'Suspensa')),
+	fk_turma VARCHAR NOT NULL REFERENCES turmas (id_turma),
+	fk_unidade VARCHAR NOT NULL REFERENCES unidades_curriculares (id_unidade),
+	fk_sala VARCHAR NOT NULL REFERENCES salas (id_sala)
+);
+
+CREATE TABLE suspensao(	
+ 	id_suspensao varchar PRIMARY KEY,
+	motivo_suspensao varchar NOT NULL,
+  	data_suspensao varchar NOT NULL,
+  	turno_suspensao varchar NOT NULL DEFAULT 'Integral',
+  	reposicao boolean DEFAULT true
+);
+
+ALTER TABLE "unidades_curriculares" ADD FOREIGN KEY ("fk_curso") REFERENCES "cursos" ("id_curso");
+
+---TABELAS RELAÇÃO:
+
+create table aulas_suspensoes (
+  id_aulas varchar NOT NULL REFERENCES aulas (id_aula), 
+  id_suspensao varchar NOT NULL REFERENCES suspensao (id_suspensao),
+  PRIMARY KEY (id_aulas,id_suspensao)
+);
+
+CREATE TABLE instrutores_competencias (
+	competencia VARCHAR NOT NULL,
+    instrutor VARCHAR NOT NULL
+);
+
+ALTER TABLE instrutores_competencias ADD FOREIGN KEY (instrutor) REFERENCES instrutores (id_instrutor);
+
+ALTER TABLE instrutores_competencias ADD FOREIGN KEY (competencia) REFERENCES competencias (id_competencia);
