@@ -84,7 +84,7 @@ CREATE TABLE aulas (
 	fk_sala VARCHAR NOT NULL REFERENCES salas (id_sala)
 );
 
--- Tabelas Relação
+--Tabelas Relação
 
 CREATE TABLE instrutores_competencias (
     id_competencia VARCHAR NOT NULL REFERENCES competencias (id_competencia),
