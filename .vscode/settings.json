@@ -2,10 +2,10 @@
    // Formatar arquivo ao salvar
    "editor.formatOnSave": true,
    // Aplicar ações ao salvar arquivo
-   // "editor.codeActionsOnSave": {
-   //    "source.fixAll": true,
-   //    "source.organizeImports": true
-   // },
+   /*"editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true
+   },*/
    // Quebra de linha (escrita não ultrapassar o tamanho da tela)
    "editor.wordWrap": "on",
    // Padronização de código: aspas duplas
