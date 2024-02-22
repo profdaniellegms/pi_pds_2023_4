@@ -3,7 +3,7 @@ INSERT INTO cursos VALUES
 ('2', 'Técnico em Informática', 1200, 'Técnico', 'Tecnologia da Informação'),
 ('3', 'Técnico em Adminitração', 1100, 'Técnico', 'Gestão e Negócios'),
 ('4', 'Programação em Python', 156, 'Qualificação', 'Tecnologia da Informação'),
-('5', 'Especialização em Instrumentação Cirúrgica', 360, 'Pós Graduação Lato-Sensu - Especialização', 'Saúde'),
+('5', 'Especialização em Instrumentação Cirúrgica', 360, 'Pós Graduação Lato-Sensu - especialização', 'Saúde'),
 ('6', 'Design de Sobrancelhas', 130, 'Aperfeiçoamento', 'Moda e Beleza'),
 ('7', 'Técnico em Segurança do Trabalho', 1200, 'Técnico', 'Segurança'),
 ('8', 'Assistente de Contabilidade', 160, 'Qualificação', 'Gestão e Negócios'),
