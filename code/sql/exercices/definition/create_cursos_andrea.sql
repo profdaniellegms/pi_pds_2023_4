@@ -5,4 +5,3 @@ CREATE TABLE "cursos" (
   "modalidade" varchar NOT NULL,
   "eixo" varchar NOT NULL
 );
-
