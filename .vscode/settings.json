@@ -15,4 +15,3 @@
    // Mostrar o tipo das variáveis na atribuição
    "javascript.inlayHints.variableTypes.enabled": true,
 }
-
