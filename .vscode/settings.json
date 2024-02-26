@@ -3,8 +3,8 @@
    "editor.formatOnSave": true,
    // Aplicar ações ao salvar arquivo
    // "editor.codeActionsOnSave": {
-   //    "source.fixAll": true,
-   //    "source.organizeImports": true
+   //    "source.fixAll": "explicit",
+   //    "source.organizeImports": "explicit"
    // },
    // Quebra de linha (escrita não ultrapassar o tamanho da tela)
    "editor.wordWrap": "on",
