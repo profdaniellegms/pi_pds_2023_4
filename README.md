@@ -1,5 +1,6 @@
 # Usamos o class rom para fazer as entregas das atividades.
-# Usamos o sql.
+# Usamos o Postgresql.
 # vs code
-# guit 
+# github
+# trello
 PI PDS 2023.4 - Cronogramas
