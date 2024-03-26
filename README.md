@@ -1,9 +1,9 @@
 # Projeto Integrador - PDS2024 (SENAC)
 
-Este repositório contém o Projeto Integrador desenvolvido como parte do curso de Processos de Desenvolvimento de Software (PDS) no SENAC.
+Este repositório contém o Projeto Integrador desenvolvido como parte do curso Programador de Sistemas (PDS) no SENAC.
 
 ## Descrição
-O Projeto Integrador PDS2024 é uma iniciativa que busca integrar os conhecimentos adquiridos ao longo do curso de PDS no SENAC. O projeto aborda diversos aspectos do desenvolvimento de software, desde a concepção até a implementação e entrega de um produto final.
+O Projeto Integrador PDS2024 é uma iniciativa que busca integrar os conhecimentos adquiridos ao longo do curso de PDS no SENAC. O projeto aborda diversos aspectos da programação, desde a concepção até a implementação e entrega de um produto final.
 
 ## Objetivo
 O objetivo principal do projeto é aplicar os conceitos e técnicas aprendidas durante o curso para desenvolver uma solução de software que atenda a uma necessidade específica do mercado ou da comunidade.
